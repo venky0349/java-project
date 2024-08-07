@@ -21,16 +21,20 @@ pipeline {
         }
         stage ('mvn clean') {
             steps {
-                mvnClean()
+                 script{
+                    mvnClean()
+                 }
             }
         }
-        stage ('mvn install') {
+        stage ('mvn unit test') {
             steps {
-                mvnInstall()
+                script{
+                    mvnUnittest()
+                }
             }
         }
 
     }
 }
 
-mvnInstall
+
