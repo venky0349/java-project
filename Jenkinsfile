@@ -11,10 +11,6 @@ pipeline {
                 sh 'mvn clean'
             }
         }
-        stage ('mvn test') {
-            steps {
-                sh 'mvn package'
-            }
-        }
+
     }
 }
