@@ -1,19 +1,20 @@
+@Library (sharedlibraries) _
 pipeline {
     agent any
     stages {
         stage ('clean workspace') {
             steps {
-                cleanWs()
+                cleanWorkSpace ()
             }
         }
         stage ('git checkout') {
             steps {
-                git 'https://github.com/venky0349/java-project.git'
+                gitCheckot ()
             }
         }
         stage ('mvn clean') {
             steps {
-                sh 'mvn clean'
+                mvnClean ()
             }
         }
 
