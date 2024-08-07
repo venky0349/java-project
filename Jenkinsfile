@@ -8,12 +8,15 @@ pipeline {
             }
         }
         stage('Git Checkout'){
-                   when { expression {  params.action == 'create' } }
+   
             steps{
-            gitCheckout(
-                branch: "master",
-                url: "https://github.com/venky0349/java-project.git"
-            )
+                script{
+                    gitCheckout(
+                       branch: "master",
+                       url: "https://github.com/venky0349/java-project.git"
+                    )
+                }
+
             }
         }
         stage ('mvn clean') {
