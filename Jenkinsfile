@@ -17,6 +17,13 @@ pipeline {
                 mvnClean()
             }
         }
+        stage ('mvn install') {
+            steps {
+                mvnInstall()
+            }
+        }
 
     }
 }
+
+mvnInstall
